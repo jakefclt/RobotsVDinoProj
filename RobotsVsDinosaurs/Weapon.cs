@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace RobotsVsDinosaurs
 {
-    class Weapon
+    public class Weapon
     {
         //member variable(Has A)
-        public string type;
-        public double attackPower;
+        public string masterBlaster;
+        public double masterBlasterAttackPower;
 
         //constructor
         public Weapon()
@@ -18,7 +18,11 @@ namespace RobotsVsDinosaurs
             
         }
         //member method(Can Do)
-
+        public void MegaManWeapon()
+        {
+            masterBlaster = "Master Blaster";
+            masterBlasterAttackPower = 10;
+        }
        
     }
 }

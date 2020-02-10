@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RobotsVsDinosaurs
 {
-    class Robot
+    public class Robot
     {
 
         //I want a Robot to have a name, health, power level, and a Weapon with a type 
@@ -14,27 +14,34 @@ namespace RobotsVsDinosaurs
 
         //member variable(Has A)
         public string name;
-        public int health;
+        public double health;
         public double powerLevel;
-
+        public double attackPower;
+        public double defense;
+        Weapon mainWeapon = new Weapon();
         //constructor
-        public Robot()
+        public Robot(string name, int attackPower, int defense, Weapon weapon)
         {
-            Console.WriteLine("Choose your robot for battle. \n 1. Mega Man 2. Cut Man 3. Guts Man");
-            name = Console.ReadLine();
-            health = 10;
+            this.name = name;
+            this.attackPower = attackPower;
+            this.defense = defense;
+            mainWeapon = weapon;
+            health = 100;
             powerLevel = 100;
-            Weapon main = new Weapon();
+            
 
         }
 
         //member method(Can Do)
+    
 
-        public void AttackDinosaur()
-        {
-            string attack =
+       
+      
 
-        }
+            
+
+
+        
 
     }
 }

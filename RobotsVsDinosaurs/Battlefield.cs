@@ -6,7 +6,41 @@ using System.Threading.Tasks;
 
 namespace RobotsVsDinosaurs
 {
-    class Battlefield
+    public class Battlefield 
     {
+        //member variable (Has A)
+        Fleet robotFleet = new Fleet();
+        Herd dinoHerd = new Herd();
+
+        Herd spinosaurusBattle = new Herd();
+        
+        //constructor
+        public Battlefield()
+        {
+            
+        }
+
+       
+        //member method(Can Do)  
+        
+       
+    public void RunBattle()
+        {
+            robotFleet.Robots[0].attack(Dino);
+            
+            dinoHerd.ChooseDinosaur();
+            robotFleet.ChooseRobot();
+
+            Console.WriteLine("Prepare for battle!");
+            Console.ReadLine();
+
+            spinosaurusBattle.SpinosaurusAttack();
+            
+            Console.ReadLine();
+
+            
+
+           
+        }
     }
 }
