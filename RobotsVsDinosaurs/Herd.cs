@@ -14,40 +14,56 @@ namespace RobotsVsDinosaurs
 
         //consructor
         public Herd()
-        {             
-
+        {
+            Dinosaur spinosaurus = new Dinosaur("Spinosaurus", 20);
+            DinoHerd.Add(spinosaurus);
+            Dinosaur troodon = new Dinosaur("Troodon", 15);
+            DinoHerd.Add(troodon);
+            Dinosaur allosaurus = new Dinosaur("Allosurus", 10);
+            DinoHerd.Add(allosaurus);
         }
 
         //member method
-        public void ChooseDinosaur()
+        public Dinosaur ChooseDinosaur()
         {
-            Console.WriteLine("Choose your dinosaur for battle. \n 1. Spinosaurus 2. Troodon 3. Allosaurus");
+            
             string input = Console.ReadLine();
             switch (input)
             {
                 case "1":
-                    
-                   
+                                       
                     Console.WriteLine("You have chosen Spinosaurus");
-                    Dinosaur spinosaurus = new Dinosaur("Spinosaurus", 3, 3);
-                    DinoHerd.Add(spinosaurus);
-                    break; 
-
+                    return DinoHerd[0];                    
 
                 case "2":
-                    
+                    if (DinoHerd.Count > 1)
+                    {
                     Console.WriteLine("You have chosen Troodon");
-                    Dinosaur troodon = new Dinosaur("Troodon", 2, 2);
-                    DinoHerd.Add(troodon);
-                    break;
-
+                    return DinoHerd[1];
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                                 
 
                 case "3":
-                  
+                    if(DinoHerd.Count > 2)
+                    {
                     Console.WriteLine("You have chosen Allosaurus");
-                    Dinosaur allosaurus = new Dinosaur("Allosurus", 1, 1);
-                    DinoHerd.Add(allosaurus);
-                    break;
+                    return DinoHerd[2];
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    
+                default :
+                    Console.WriteLine("Not a valid dinosaur");
+                    return ChooseDinosaur();
+                    
+                    
+
                 
                
             }

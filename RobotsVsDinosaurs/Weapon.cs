@@ -9,20 +9,17 @@ namespace RobotsVsDinosaurs
     public class Weapon
     {
         //member variable(Has A)
-        public string masterBlaster;
-        public double masterBlasterAttackPower;
+        public string weaponType;
+        public int weaponPower;
 
         //constructor
-        public Weapon()
+        public Weapon(string weaponType, int weaponPower)
         {
-            
+            this.weaponType = weaponType;
+            this.weaponPower = weaponPower;
         }
         //member method(Can Do)
-        public void MegaManWeapon()
-        {
-            masterBlaster = "Master Blaster";
-            masterBlasterAttackPower = 10;
-        }
+    
        
     }
 }

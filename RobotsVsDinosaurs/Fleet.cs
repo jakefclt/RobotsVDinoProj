@@ -15,39 +15,53 @@ namespace RobotsVsDinosaurs
         //constructor
         public Fleet()
         {
-             
+            Robot megaman = new Robot("Mega man", 20, new Weapon("Blaster", 20));
+            RobotFleet.Add(megaman);
+            Robot cutman = new Robot("Cut man", 15, new Weapon("Cutter" , 15));
+            RobotFleet.Add(cutman);
+            Robot gutman = new Robot("Gut Man", 10, new Weapon("Gutter" , 10));
+            RobotFleet.Add(gutman);
+
         }
 
 
         //member method(Can Do)
-        public void ChooseRobot()
+        public Robot ChooseRobot()
         {
-            Console.WriteLine("Choose your robot for battle. \n 1. Mega Man 2. Cut Man 3. Guts Man");
+            
             string input = Console.ReadLine();
             switch (input)
             {
                 case "1":
 
-                    Console.WriteLine("You have chosen Mega Man");
-                    Robot megaman = new Robot("Mega man", 3, 3, new Weapon());
-                    RobotFleet.Add(megaman);
-                    break;
-
+                    Console.WriteLine("You have chosen " + RobotFleet[0].name);
+                    return RobotFleet[0];
+                  
                 case "2":
-
-                    Console.WriteLine("You have chosen Cut Man");
-                    Robot cutman = new Robot("Cut man", 2, 2, new Weapon());
-                    RobotFleet.Add(cutman);
-                    break;
-
+                    if(RobotFleet.Count > 1)
+                    {
+                    Console.WriteLine("You have chosen " + RobotFleet[1].name);
+                    return RobotFleet[1];
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    
                 case "3":
+                    if(RobotFleet.Count > 2)
+                    {
+                     Console.WriteLine("You have chosen " + RobotFleet[2].name);
+                    return RobotFleet[2];
+                    }
+                    else
+                    {
+                        goto default;
+                    }
 
-
-                    Console.WriteLine("You have chosen Gut Man");
-                    Robot gutman = new Robot("Gut Man", 1, 1, new Weapon());
-                    RobotFleet.Add(gutman);
-                    break;
-
+                default:
+                    Console.WriteLine("Not a valid robot");
+                    return ChooseRobot();                    
 
 
             }

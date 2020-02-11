@@ -13,13 +13,12 @@ namespace RobotsVsDinosaurs
         public double health;
         public double energy;
         public double attackPower;
-        public double defense;
+        
         //constructor
-        public Dinosaur(string type, double attackPower, double defense)
+        public Dinosaur(string type, double attackPower)
         {
             this.type = type;
-            this.attackPower = attackPower;
-            this.defense = defense;
+            this.attackPower = attackPower;            
             health = 100;
             energy = 100;
         }
@@ -28,6 +27,10 @@ namespace RobotsVsDinosaurs
        public void DinoAttack(Robot robot)
         {
             robot.health -= attackPower;
+            energy -= 10;
+
+            Console.WriteLine("Dinosaurs current energy is at " + energy + " %");
+            Console.WriteLine("Robots current health is at " + robot.health + " %");
 
         }
 
